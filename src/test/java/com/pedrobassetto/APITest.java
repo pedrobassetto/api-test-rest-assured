@@ -25,7 +25,8 @@ public class APITest {
 
     @Test
     public void testConvertTimestampToUTCFailure(){
-        get("/UnixTime/fromunixtimestamp?unixtimestamp=Pedro").then().statusCode(409);
+        Integer code = get("/UnixTime/fromunixtimestamp?unixtimestamp=Pedro").getStatusCode();
+        assertEquals(code, 409);
     }
     
 }
